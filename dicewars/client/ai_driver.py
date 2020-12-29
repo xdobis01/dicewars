@@ -15,9 +15,9 @@ def TimeoutHandler(signum, handler):
     raise TimeoutError('')
 
 
-TIME_LIMIT_CONSTRUCTOR = 10.0  # in seconds, for AI constructor
-FISCHER_INIT = 10.0  # seconds
-FISCHER_INCREMENT = 0.25 # seconds
+TIME_LIMIT_CONSTRUCTOR = 1000.0  # in seconds, for AI constructor
+FISCHER_INIT = 100000.0  # seconds
+FISCHER_INCREMENT = 25 # seconds
 
 
 class BattleCommand:
