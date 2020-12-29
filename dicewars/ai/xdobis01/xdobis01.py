@@ -55,7 +55,7 @@ class AI:
         OPEN = [[[source.get_name()], source.dice, 0] for source in sources]
 
         print("STARTING PATH EXPANSIONS")
-        for i in range(attacks):
+        for i in range(len(attacks)):
             print("POP PATH WITH MIN COST")
             path_values = [p[2] for p in OPEN]
             path = OPEN.pop(path_values.index(min(path_values)))
@@ -122,7 +122,7 @@ class AI:
             best_path = OPEN.pop(path_values.index(min(path_values)))
 
             if min(path_values) == 0 or best_path[2] > 70:
-               print("IGNORE PATH OF LENGTH 1 AND WITH HIGH COST")
+               print("IGNORE PATH OF LENGTH 1 OR WITH HIGH COST")
                continue
 
 
@@ -172,7 +172,7 @@ class AI:
             print("CALCULATED DEFENDER NEIGHBOURS ATTACK SUCCESS PROBABILITY")
 
         cost = 100 - 100 * (parent_cost + children_cost)
-        print("CALCULATED NODE COST {cost}, RANGE 0-100".format(str(cost)))
+        print("CALCULATED NODE COST {cost}, RANGE 0-100".format(cost=str(cost)))
         return cost
 
     def MySearch(self, attacks):
